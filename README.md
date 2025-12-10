@@ -1,0 +1,1 @@
+# folio-image-dependencies
