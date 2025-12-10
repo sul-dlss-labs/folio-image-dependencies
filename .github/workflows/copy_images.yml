@@ -1,0 +1,24 @@
+name: Copy Docker Hub Image to GHCR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy-images:
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Pull Docker Hub image
+        run: docker pull bitnamilegacy/elasticsearch:8.6.2-debian-11-r10
+
+      - name: Tag image for GHCR
+        run: docker tag bitnamilegacy/elasticsearch:8.6.2-debian-11-r10 ghcr.io/${{ github.repository_owner }}/folio-elasticsearch:8.6.2-debian-11-r10
+
+      - name: Push image to GHCR
+        run: docker push ghcr.io/${{ github.repository_owner }}/folio-elasticsearch:8.6.2-debian-11-r10
+    
