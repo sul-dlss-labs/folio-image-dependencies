@@ -35,47 +35,37 @@ jobs:
         run: docker pull bitnamilegacy/os-shell:latest
 
       - name: Tag image for GHCR
-        run: docker tag bitnamilegacy/os-shell:latest ghcr.io/${{ github.repository_owner }}/bitnamilegacy-os-shell:latest
+        run: docker tag bitnamilegacy/os-shell:latest ghcr.io/${{ github.repository_owner }}/folio-os-shell:latest
 
       - name: Push image to GHCR
-        run: docker push ghcr.io/${{ github.repository_owner }}/bitnamilegacy-os-shell:latest
+        run: docker push ghcr.io/${{ github.repository_owner }}/folio-os-shell:latest
 
       
       - name: Pull docker hub image for elasticsearch-exporter
-        run: docker pull bitnamilegacy/elasticsearch-exporter:latest
+        run: docker pull bitnamilegacy/elasticsearch-exporter:1.5.0-debian-11-r80
       
       - name: Tag image for GHCR
-        run: docker tag bitnamilegacy/elasticsearch-exporter:latest ghcr.io/${{ github.repository_owner }}/bitnamilegacy-elasticsearch-exporter:latest
+        run: docker tag bitnamilegacy/elasticsearch-exporter:1.5.0-debian-11-r80 ghcr.io/${{ github.repository_owner }}/folio-elasticsearch-exporter:1.5.0-debian-11-r80
 
       - name: Push image to GHCR
-        run: docker push ghcr.io/${{ github.repository_owner }}/bitnamilegacy-elasticsearch-exporter:latest
+        run: docker push ghcr.io/${{ github.repository_owner }}/folio-elasticsearch-exporter:1.5.0-debian-11-r80
       
       # Kafka
       - name: Pull docker hub image for kafka
         run: docker pull bitnamilegacy/kafka:3.9.0-debian-12-r1
       
       - name: Tag image for GHCR
-        run: docker tag bitnamilegacy/kafka:3.9.0-debian-12-r1 ghcr.io/${{ github.repository_owner }}/bitnamilegacy-kafka:3.9.0-debian-12-r1
+        run: docker tag bitnamilegacy/kafka:3.9.0-debian-12-r1 ghcr.io/${{ github.repository_owner }}/folio-kafka:3.9.0-debian-12-r1
 
       - name: Push image to GHCR
-        run: docker push ghcr.io/${{ github.repository_owner }}/bitnamilegacy-kafka:3.9.0-debian-12-r1
+        run: docker push ghcr.io/${{ github.repository_owner }}/folio-kafka:3.9.0-debian-12-r1
 
       
       - name: Pull docker hub image for jmx-exporter
-        run: docker pull bitnamilegacy/jmx-exporter:latest  
+        run: docker pull bitnamilegacy/jmx-exporter:1.0.1-debian-12-r9
 
       - name: Tag image for GHCR
-        run: docker tag bitnamilegacy/jmx-exporter:latest ghcr.io/${{ github.repository_owner }}/bitnamilegacy-jmx-exporter:latest
+        run: docker tag bitnamilegacy/jmx-exporter:1.0.1-debian-12-r9 ghcr.io/${{ github.repository_owner }}/folio-jmx-exporter:1.0.1-debian-12-r9
       
       - name: Push image to GHCR
-        run: docker push ghcr.io/${{ github.repository_owner }}/bitnamilegacy-jmx-exporter:latest
-
-      # Postfix
-      - name: Pull docker hub image for postfix
-        run: docker pull bitnamilegacy/postfix:latest
-
-      - name: Tag image for GHCR
-        run: docker tag bitnamilegacy/postfix:latest ghcr.io/${{ github.repository_owner }}/bitnamilegacy-postfix:latest
-      
-      - name: Push image to GHCR
-        run: docker push ghcr.io/${{ github.repository_owner }}/bitnamilegacy-postfix:latest
+        run: docker push ghcr.io/${{ github.repository_owner }}/folio-jmx-exporter:latest
