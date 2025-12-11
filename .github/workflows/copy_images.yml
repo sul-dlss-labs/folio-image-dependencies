@@ -52,10 +52,10 @@ jobs:
       
       # Kafka
       - name: Pull docker hub image for kafka
-        run: docker pull bitnamilegacy/bitnamilegacy/kafka:3.9.0-debian-12-r1
+        run: docker pull bitnamilegacy/kafka:3.9.0-debian-12-r1
       
       - name: Tag image for GHCR
-        run: docker tag bitnamilegacy/bitnamilegacy/kafka:3.9.0-debian-12-r1 ghcr.io/${{ github.repository_owner }}/bitnamilegacy-kafka:3.9.0-debian-12-r1
+        run: docker tag bitnamilegacy/kafka:3.9.0-debian-12-r1 ghcr.io/${{ github.repository_owner }}/bitnamilegacy-kafka:3.9.0-debian-12-r1
 
       - name: Push image to GHCR
         run: docker push ghcr.io/${{ github.repository_owner }}/bitnamilegacy-kafka:3.9.0-debian-12-r1
